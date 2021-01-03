@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Routine List Modification</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="node_modules/animate.css/animate.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="node_modules/select2/dist/css/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="node_modules/perfect-scrollbar/css/perfect-scrollbar.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="assets/css_routine/main.css">
+<link rel="stylesheet" type="text/css" href="assets/css_otherform/main.css">
+<link rel="stylesheet" type="text/css" href="assets/css_routine/util.css">
+<!--===============================================================================================-->
+	  <style>
+		  .switch-field {
+  display: flex;
+  margin-bottom: 36px;
+  overflow: hidden;
+}
+
+.switch-field input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.switch-field label {
+  background-color: #e4e4e4;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  padding: 8px 16px;
+  margin-right: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+  cursor: pointer;
+}
+
+.switch-field input:checked + label {
+  background-color: #a5dc86;
+  box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+	  </style>
+
+<div class="topnav" id="mytopnav">
+	  	<div id = "navContent">
+			<a href = "UserProfile.html">Profile</a>
+            <a href = "UserList.html">User</a>
+            <a href = "BuildingList.html">Building</a>
+            <a href = "RoomList.html">Room</a>
+            <a href = "DepartmentList.html">Department</a>
+            <a href = "ProgramList.html">Program</a>
+            <a class = "active" href = "RoutineList.html">Routine</a>
+		</div>
+		<button id = "logoutButton"><a href="index.html">Log Out</a></button>  
+      </div>  
+</head>
+<body>
+	<div class="limiter">
+		<div id = "containerTable" class="container-table100">
+             <div id = "typeModal" class="modal-content">
+                <div id = "typeWrap" class="wrap-login100">
+                    <form id = "typeForm" class="login100-form validate-form">
+                        <span class="login100-form-title">
+                            Routine List
+                        </span>
+                        <div class="wrap-input100 validate-input">
+                            
+                            <label for="UserType" class="input"style="padding: 0 0px 0 0; font-size:90%;">Select Routine :  </label>
+                                    <select id="routineList" name="routineID" style="background-color: 	#DCDCDC">
+                                        <!-- List will be dynamically loaded -->
+                                    </select>
+                        </div>
+                        
+                        <div id = "failMessage">
+                        </div>
+                
+                        <div class="container-login100-form-btn">
+                            <button id = "showRoutineButton"type = 'submit' class="login100-form-btn">
+                                Show Routine
+                            </button>
+                        </div>
+					</form>
+				
+					<form id = "addForm" class="login100-form validate-form">
+						<div class="wrap-input100 validate-input">
+                            
+                            <label for="UserType" class="input"style="padding: 0 0px 0 0; font-size:90%;">Select Program:  </label>
+							<div class="switch-field">
+								<input type="radio" id="radio-three" name="switch-two" />
+								<label for="radio-three">CSE</label>
+								<input type="radio" id="radio-four" name="switch-two"  />
+								<label for="radio-four">TVE</label>
+								<input type="radio" id="radio-five" name="switch-two"  />
+								<label for="radio-five">MCE</label>
+								<input type="radio" id="radio-six" name="switch-two"  />
+								<label for="radio-six">BTM</label>
+								<input type="radio" id="radio-seven" name="switch-two"  />
+								<label for="radio-seven">CEE</label>
+							  </div>
+							
+						</div>
+						<div class="wrap-input100 validate-input">
+                            
+                            <label for="UserType" class="input"style="padding: 0 0px 0 0; font-size:90%;">Select Batch:  </label>
+                                   
+										<div class="switch-field">
+											<input type="radio" id="radio-eleven" name="switch-one" />
+											<label for="radio-eleven">17</label>
+											<input type="radio" id="radio-twelve" name="switch-one"  />
+											<label for="radio-twelve">18</label>
+											<input type="radio" id="radio-thirteen" name="switch-one" />
+											<label for="radio-thirteen">19</label>
+											<input type="radio" id="radio-foureteen" name="switch-one" />
+											<label for="radio-foureteen">20</label>
+									
+										  </div>   
+                                
+						</div>
+						<div class="wrap-input100 validate-input">
+                            
+                            <label for="UserType" class="input"style="padding: 0 0px 0 0; font-size:90%;">Select Section:  </label>
+							<div class="switch-field">
+								<input type="radio" id="radio-eight" name="switch-three" />
+								<label for="radio-eight">1</label>
+								<input type="radio" id="radio-nine" name="switch-three"  />
+								<label for="radio-nine">2</label>
+								<input type="radio" id="radio-ten" name="switch-three" />
+								<label for="radio-ten">3</label>
+						
+							  </div>
+						</div>
+						<div  id = "addRoutineButton" class="container-login100-form-btn">
+                            <button type = 'submit' class="login100-form-btn">
+                                Add Routine
+							</button>
+							
+							<div id = "routineError">
+								
+						  	</div>
+						</div>
+						
+						
+					</form>
+                </div>
+            </div>
+		</div>
+	</div>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+	<script>
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		var firebaseConfig = {
+			apiKey: "AIzaSyC779fYGX4FppGMWHRa7adUBOVUFHVmpMc",
+			authDomain: "classroom-management-sys-62bac.firebaseapp.com",
+			databaseURL: "https://classroom-management-sys-62bac.firebaseio.com",
+			projectId: "classroom-management-sys-62bac",
+			storageBucket: "classroom-management-sys-62bac.appspot.com",
+			appId: "1:629847542385:web:45cc8a1e459b99de7669d0",
+			measurementId: "G-5Q3ZRGNXW8"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		//make auth and firestore references
+		const auth = firebase.auth();
+		const db = firebase.firestore();
+		//update firestore settings
+		db.settings({timestampsInSnapshots: true});
+	</script>
+	<script src = "RoutineList.js"></script>
+</body>
+</html>
